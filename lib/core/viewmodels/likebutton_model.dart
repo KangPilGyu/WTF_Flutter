@@ -1,6 +1,6 @@
-import 'package:flutter_provider_architecture/core/services/post_service.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/base_model.dart';
-import 'package:flutter_provider_architecture/locator.dart';
+import '../../locator.dart';
+import '../services/post_service.dart';
+import 'base_model.dart';
 
 class LikeButtonModel extends BaseModel {
   PostService _postService = locator<PostService>();

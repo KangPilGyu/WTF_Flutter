@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/base_model.dart';
-import 'package:flutter_provider_architecture/locator.dart';
+import '../../core/viewmodels/base_model.dart';
+import '../../locator.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends BaseModel> extends StatefulWidget {
@@ -30,7 +30,7 @@ class _BaseViewState<T extends BaseModel> extends State<BaseView<T>> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<T>(
-      builder: (BuildContext context) => model,
+        create: (BuildContext context) => model,
       child: Consumer<T>(builder: widget.builder),
     );
   }

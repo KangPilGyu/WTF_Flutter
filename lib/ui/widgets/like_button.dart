@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/likebutton_model.dart';
-import 'package:flutter_provider_architecture/ui/views/base_view.dart';
+
+import '../../core/viewmodels/likebutton_model.dart';
+import '../views/base_view.dart';
+
 
 class LikeButton extends StatelessWidget {
   final int postId;

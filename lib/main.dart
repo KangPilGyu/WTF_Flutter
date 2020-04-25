@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/models/user.dart';
-import 'package:flutter_provider_architecture/core/services/authentication_service.dart';
-import 'package:flutter_provider_architecture/locator.dart';
-import 'package:flutter_provider_architecture/ui/router.dart';
 import 'package:provider/provider.dart';
+import 'core/models/user.dart';
+import 'core/services/authentication_service.dart';
+import 'locator.dart';
+import 'ui/router.dart';
 
 void main() {
   setupLocator();
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<User>(
       initialData: User.initial(),
-      builder: (BuildContext context) =>
+      create: (BuildContext context) =>
           locator<AuthenticationService>().userController.stream,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,8 +1,7 @@
 import 'dart:convert';
-
-import 'package:flutter_provider_architecture/core/models/comment.dart';
-import 'package:flutter_provider_architecture/core/models/post.dart';
-import 'package:flutter_provider_architecture/core/models/user.dart';
+import '../models/comment.dart';
+import '../models/post.dart';
+import '../models/user.dart';
 
 import 'package:http/http.dart' as http;
 

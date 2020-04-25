@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/models/post.dart';
-import 'package:flutter_provider_architecture/ui/views/home_view.dart';
-import 'package:flutter_provider_architecture/ui/views/login_view.dart';
-import 'package:flutter_provider_architecture/ui/views/post_view.dart';
+import '../core/models/post.dart';
+import 'views/home_view.dart';
+import 'views/login_view.dart';
+import 'views/post_view.dart';
+import 'views/home_view.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {

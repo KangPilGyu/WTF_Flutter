@@ -1,13 +1,15 @@
-import 'package:flutter_provider_architecture/core/enum/viewstate.dart';
-import 'package:flutter_provider_architecture/core/models/comment.dart';
-import 'package:flutter_provider_architecture/core/services/api.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/base_model.dart';
-import 'package:flutter_provider_architecture/locator.dart';
+import '../../locator.dart';
+import '../enum/viewstate.dart';
+import '../models/comment.dart';
+import '../services/api.dart';
+import 'base_model.dart';
 
 class CommentsModel extends BaseModel {
   Api _api = locator<Api>();
 
   List<Comment> comments;
+
+  get state => null;
 
   Future fetchComments(int postId) async {
     setState(ViewState.Busy);

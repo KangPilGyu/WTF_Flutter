@@ -1,6 +1,6 @@
-import 'package:flutter_provider_architecture/core/models/post.dart';
-import 'package:flutter_provider_architecture/core/services/api.dart';
-import 'package:flutter_provider_architecture/locator.dart';
+import '../../locator.dart';
+import '../models/post.dart';
+import 'api.dart';
 
 class PostService {
   Api _api = locator<Api>();

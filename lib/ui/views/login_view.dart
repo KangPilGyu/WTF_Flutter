@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/enum/viewstate.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/login_model.dart';
-import 'package:flutter_provider_architecture/ui/shared/app_colors.dart';
-import 'package:flutter_provider_architecture/ui/views/base_view.dart';
-import 'package:flutter_provider_architecture/ui/widgets/login_header.dart';
+import '../../core/enum/viewstate.dart';
+import '../../core/viewmodels/login_model.dart';
+import '../shared/app_colors.dart';
+import '../widgets/login_header.dart';
+import 'base_view.dart';
 
 class LoginView extends StatefulWidget {
   @override

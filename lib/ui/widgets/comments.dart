@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_architecture/core/enum/viewstate.dart';
-import 'package:flutter_provider_architecture/core/models/comment.dart';
-import 'package:flutter_provider_architecture/core/viewmodels/comments_model.dart';
-import 'package:flutter_provider_architecture/ui/shared/app_colors.dart';
-import 'package:flutter_provider_architecture/ui/shared/ui_helpers.dart';
-import 'package:flutter_provider_architecture/ui/views/base_view.dart';
+import '../../core/enum/viewstate.dart';
+import '../../core/models/comment.dart';
+import '../../core/viewmodels/comments_model.dart';
+import '../shared/app_colors.dart';
+import '../shared/ui_helpers.dart';
+import '../views/base_view.dart';
 
 class Comments extends StatelessWidget {
   final int postId;
@@ -15,7 +15,7 @@ class Comments extends StatelessWidget {
     return BaseView<CommentsModel>(
       onModelReeady: (model) => model.fetchComments(postId),
       builder: (BuildContext context, CommentsModel model, Widget child) =>
-          model.state == ViewState.Busy
+          model.state == ViewState.Busy || model.comments == null
               ? Center(
                   child: CircularProgressIndicator(),
                 )
