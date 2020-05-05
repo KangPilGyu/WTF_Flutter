@@ -17,7 +17,6 @@ class _LoginViewState extends State<LoginView> {
     return BaseView<LoginModel>(
       builder: (BuildContext context, LoginModel model, Widget child) =>
           Scaffold(
-        backgroundColor: backgroundColor,
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Container(
