@@ -13,7 +13,7 @@ class Comments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<CommentsModel>(
-      onModelReeady: (model) => model.fetchComments(postId),
+      onModelReady: (model) => model.fetchComments(postId),
       builder: (BuildContext context, CommentsModel model, Widget child) =>
           model.state == ViewState.Busy || model.comments == null
               ? Center(

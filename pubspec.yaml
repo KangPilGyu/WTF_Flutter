@@ -1,5 +1,5 @@
-name: wtf_flutter
-description: wtf_flutter
+name: wtf_main
+description: wtf_main
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -18,6 +18,8 @@ environment:
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
   provider: ^4.0.5
   get_it: ^4.0.1
@@ -70,3 +72,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - lang/en.json
+    - lang/ko.json
+

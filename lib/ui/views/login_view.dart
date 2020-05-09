@@ -17,7 +17,6 @@ class _LoginViewState extends State<LoginView> {
     return BaseView<LoginModel>(
       builder: (BuildContext context, LoginModel model, Widget child) =>
           Scaffold(
-        backgroundColor: backgroundColor,
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Container(
@@ -43,7 +42,7 @@ class _LoginViewState extends State<LoginView> {
                           var loginSuccess =
                               await model.login(_controller.text);
                           if (loginSuccess) {
-                            Navigator.pushNamed(context, '/');
+                            Navigator.pushNamed(context, '/post');
                           }
                         },
                       ),
