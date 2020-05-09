@@ -9,10 +9,13 @@ enum AppTheme {
 final appThemeData = {
   AppTheme.PinkLight : ThemeData(
     brightness: Brightness.light,
-    primaryColor: Colors.pink
+    primaryColor: Colors.pink,
+    accentColor: Colors.deepOrange
   ),
   AppTheme.PinkDark : ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.pink
+    brightness: Brightness.dark,
+    primaryColor: Colors.pink,
+    accentColor: Colors.deepOrange
+
   ),
 };

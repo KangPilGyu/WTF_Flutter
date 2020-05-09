@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wtf_main/app_localizations.dart';
 import 'package:wtf_main/core/viewmodels/app_setting_model.dart';
 import 'package:wtf_main/ui/shared/app_themes.dart';
+import 'package:wtf_main/ui/widgets/commons/layout.dart';
 import '../../core/enum/viewstate.dart';
 import '../../core/models/user.dart';
 import '../../core/viewmodels/home_model.dart';
@@ -17,45 +19,58 @@ class HomeView extends StatelessWidget {
     return BaseView<HomeModel>(
       onModelReady: (model) => model.gePosts(user.id),
       builder: (BuildContext context, HomeModel model, Widget child) =>
-          Scaffold(
-            body: model.state == ViewState.Busy
-                ? Center(
-              child: CircularProgressIndicator(),
-            )
-                : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                UIHelper.verticalSpaceLarge(),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'Welcome ${user.name}',
-                    style: headerStyle,
+          DefaultTabController(
+            length: 3,
+            child: Scaffold(
+              appBar: MainHeaderAppBar(context, AppLocalizations.of(context).translate("app_name")),
+              drawer: MainRightDrawer(),
+              floatingActionButton: FloatingActionButton(
+                  tooltip: 'Write',
+                  child: Icon(
+                    Icons.border_color,
+                    size: 16.0,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'Here are all your posts',
-                    style: subHeaderStyle,
+                  onPressed: () => Navigator.pushNamed(context, "/login")
+              ),
+              body: model.state == ViewState.Busy
+                  ? Center(
+                child: CircularProgressIndicator(),
+              )
+                  : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  UIHelper.verticalSpaceLarge(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      'Welcome ${user.name}',
+                      style: headerStyle,
+                    ),
                   ),
-                ),
-                UIHelper.verticalSpaceSmall(),
-                Row(
-                  children: <Widget>[
-                    RaisedButton(
-                      child: Text("PinkLight"),
-                      onPressed: () => appSettingModel.changeAppTheme(AppTheme.PinkLight),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      AppLocalizations.of(context).translate('first_string'),
+                      style: subHeaderStyle,
                     ),
-                    RaisedButton(
-                      child: Text("PinkDark"),
-                      onPressed: () => appSettingModel.changeAppTheme(AppTheme.PinkDark),
-                    ),
-                  ],
-                )
-              ],
+                  ),
+                  UIHelper.verticalSpaceSmall(),
+                  Row(
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Text("PinkLight"),
+                        onPressed: () => appSettingModel.changeAppTheme(AppTheme.PinkLight),
+                      ),
+                      RaisedButton(
+                        child: Text("PinkDark"),
+                        onPressed: () => appSettingModel.changeAppTheme(AppTheme.PinkDark),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
+          )
     );
   }
 }
