@@ -66,6 +66,23 @@ class HomeView extends StatelessWidget {
                         onPressed: () => appSettingModel.changeAppTheme(AppTheme.PinkDark),
                       ),
                     ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Text("create f user"),
+                        onPressed: () => model.createUser(User(name: "김재곤", username: '빈값')),
+                      ),
+                      RaisedButton(
+                        child: Text("get f user"),
+                        onPressed: () => model.getUser(1),
+                      ),
+                    ]
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Text("user name : ${model.displayUser.name}")
+                    ],
                   )
                 ],
               ),

@@ -3,7 +3,6 @@ import '../core/models/post.dart';
 import 'views/home_view.dart';
 import 'views/login_view.dart';
 import 'views/post_view.dart';
-import 'views/home_view.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
