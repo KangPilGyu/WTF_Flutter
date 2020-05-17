@@ -1,3 +1,5 @@
+import 'package:wtf_main/core/services/db_service.dart';
+
 import 'core/services/app_setting_service.dart';
 import 'core/services/api.dart';
 import 'core/services/authentication_service.dart';
@@ -16,6 +18,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => AuthenticationService());
   locator.registerLazySingleton(() => PostService());
   locator.registerLazySingleton(() => Api());
+  locator.registerLazySingleton(() => DBService());
 
   locator.registerLazySingleton(() => LoginModel());
   locator.registerLazySingleton(() => AppSettingModel());
